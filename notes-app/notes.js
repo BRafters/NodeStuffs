@@ -2,19 +2,14 @@ const fs = require("fs");
 const chalk = require("chalk");
 const fileName = "notes.json";
 
-// Sets a given note
-const setNotes = (title, body) => {
-
-};
-
 // Adds a note
 const addNotes = (title, body) => {
     const notes = loadNotes();
-    const dupNotes = notes.filter((note) => {
-        return note.title === title;
-    });
+    const dupeNote = notes.find((note) => note.title === title);
 
-    if(dupNotes.length > 0){
+    debugger
+
+    if(dupeNote != undefined){
         console.log(chalk.inverse.bold.red("Note already added!"));
         return;
     }
@@ -61,8 +56,8 @@ const loadNotes = () => {
 
 const readNote = (title) => {
     const notes = loadNotes();
-    const note = notes.filter(note => {return note.title === title});
-    console.log(`title: ${note.title} \n ${note.body}`);
+    const note = notes.find(note => note.title === title);
+    console.log(`title: ${note.title} \n${note.body}`);
 }
 
 // Reads all notes from the file
@@ -83,4 +78,4 @@ const saveNotes = (notes) => {
 }
 
 
-module.exports = {setNotes, addNotes, loadNotes, removeNote, readAllNotes, readNote};
+module.exports = {addNotes, loadNotes, removeNote, readAllNotes, readNote};
