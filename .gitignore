@@ -104,3 +104,7 @@ dist
 .tern-port
 
 /notes-app-all
+/AsyncronousNode/weather-node-app/weather_api_keys.txt
+/AsyncronousNode/weather-node-app/weather_creds.json
+/AsyncronousNode/challenges/challenge_one/weather_creds.json
+/AsyncronousNode/challenges/challenge_two/api_url.js
