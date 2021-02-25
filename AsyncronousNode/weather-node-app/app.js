@@ -9,12 +9,12 @@ const userInput = process.argv[2];
 
 // Determine if it is empty or not
 if(userInput !== undefined){
-    geoCode(userInput, (err, res) => {
+    geoCode(userInput, (err, {center, text}) => {
         if(err)
             console.log(err);
         else{
-            console.log(res.center);
-            forecast(res.text, (err, weatherdata) => {
+            console.log(`Lat: ${center[1]}, Lng: ${center[0]}`);
+            forecast(text, (err, weatherdata) => {
                 if(err)
                     console.log(err);
                 else
