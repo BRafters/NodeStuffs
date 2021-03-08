@@ -108,3 +108,6 @@ dist
 /AsyncronousNode/weather-node-app/weather_creds.json
 /AsyncronousNode/challenges/challenge_one/weather_creds.json
 /AsyncronousNode/challenges/challenge_two/api_url.js
+/webserver/src/utils/weather_api_keys.txt
+/webserver/src/utils/mapbox.json
+/webserver/src/utils/weatherstack.json

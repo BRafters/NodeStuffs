@@ -1,0 +1,66 @@
+body{
+    color: #333333;
+    font-family: arial;
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 0 16px;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+header{
+    margin-top: 16px;
+    margin-bottom: 48px;
+}
+footer{
+    color: #888888;
+    border-top: 1px solid #eeeeee;
+    margin-top: 16px;
+    padding: 16px 0;
+}
+h1{
+    font-size: 3rem;
+    margin-bottom: 16px;
+}
+header a{
+    text-decoration: none;
+    color: #888888;
+    margin-right: 16px;
+    transition: background-color .4s ease, color .25s ease;
+    padding: 10px 15px;
+    border-radius: 2px;
+}
+header a:hover{
+    background-color: #333333;
+    color: #F7F0F0;
+}
+form{ }
+
+.container{
+    flex-grow: 1;
+}
+
+/* ID Styles */
+input[type="submit"]{
+    /* background-color: #333333; */
+    cursor: pointer;
+    color: #333333;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 2px;
+    border: 1px solid #cccccc;
+    margin-left: 10px;
+    transition: color 0.25s ease, background-color 0.3s ease;
+}
+input[type="submit"]:hover{
+    background-color: #333333;
+    color: #F7F0F0;
+}
+input[type="text"]{
+    padding: 10px 20px;
+    border-radius: 2px;
+    color: #333333;
+    border: 1px solid #cccccc;
+    outline: none;
+}

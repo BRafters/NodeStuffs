@@ -3,12 +3,13 @@ const mapStringFuncs = require("./stringFuncsForMap.js");
 
 const geoCode = (address, callback) => {
     request({url: mapStringFuncs.getURL(address), json: true}, (err, {body}) => {
-        if(err)
-            callback("Unable to connect to location", undefined);
-        else if(body.features.length === 0)
-            callback("Unable to find location, try another search", undefined);
+        if(err){
+            callback("An error has occurred", undefined);
+        }
+        else if(body.message === "Not Found"){
+            callback(body, undefined);
+        }
         else{
-            console.log(body);
             callback(undefined, body.features[0]);
         }
     });
