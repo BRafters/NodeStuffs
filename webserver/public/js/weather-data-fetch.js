@@ -15,8 +15,8 @@ weatherForm.addEventListener("submit", (event) => {
     msgOne.innerHTML = msgTwo.innerHTML = msgThree.innerHTML = "";
 
     // Grab the value of the text field
-    let location = locationInput.value !== "" ? locationInput.value : "Boston";
-    const URL = "http://api.weatherstack.com/current?access_key=35ccdc0086e39719bcc1e3c1f979481a&units=m&query=" + location
+    let location = locationInput.value || "Boston";
+    const URL = "/weather?address=" + location;
 
     fetch(URL).then((response) => {
         console.log(URL);
@@ -25,9 +25,10 @@ weatherForm.addEventListener("submit", (event) => {
                 msgOne.innerHTML = data.error.info;
                 return;
             }
-            msgOne.innerHTML = data.location.name + ", " + data.location.region;
-            msgTwo.innerHTML = data.current.temperature + "°C";
+
+            msgOne.innerHTML = data.location;
+            msgTwo.innerHTML = data.temperature;
             msgThree.innerHTML = new Date(Date.now());
         });
-    });
+    }).catch((err) => {msgOne.innerHTML = "Failed"});
 });
